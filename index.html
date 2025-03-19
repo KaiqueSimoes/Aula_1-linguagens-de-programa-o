@@ -4,58 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Compra de iPhone</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 150px; /* Ajuste o tamanho da logo */
+            height: auto;
+        }
+
+        form {
+            margin: 0 auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #555;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+    <img src="3000b14c-f38e-4acb-a4b0-7faab83957f5.jpg" alt="Logo Tech Phone" class="logo">
+    
     <h1>Formulário de Compra de iPhone</h1>
     <form action="http://www.w3schools.com/action_page.php" method="POST">
         <!-- Dados Pessoais -->
         <fieldset>
             <legend>Dados Pessoais</legend>
-
             <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
-
+            <input type="text" id="nome" name="nome" required>
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
+            <input type="email" id="email" name="email" required>
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required><br><br>
-
+            <input type="tel" id="telefone" name="telefone" required>
             <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" required><br><br>
+            <input type="text" id="cep" name="cep" required>
         </fieldset>
 
-        <!-- Endereço, Cidade e Estado -->
+        <!-- Endereço -->
         <fieldset>
             <legend>Endereço</legend>
-
             <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required><br><br>
-
+            <input type="text" id="endereco" name="endereco" required>
             <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required><br><br>
-
+            <input type="text" id="cidade" name="cidade" required>
             <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" required><br><br>
+            <select id="estado" name="estado" required>
+                <option value="">Selecione</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="BA">Bahia</option>
+            </select>
         </fieldset>
 
         <!-- Informações do Produto -->
         <fieldset>
             <legend>Informações do Produto</legend>
-
             <label for="modelo">Modelo de iPhone:</label>
-            <select id="modelo" name="modelo" required>
-                <option value="">Selecione</option>
-                <option value="iphone_15">iPhone 15</option>
-                <option value="iphone_15_pro">iPhone 15 Pro</option>
-                <option value="iphone_15_pro_max">iPhone 15 Pro Max</option>
-                <option value="iphone_14">iPhone 14</option>
-                <option value="iphone_14_pro">iPhone 14 Pro</option>
-            </select><br><br>
-
-            <label for="saude_bateria">Saúde da Bateria (%):</label>
-            <input type="number" id="saude_bateria" name="saude_bateria" min="0" max="100" required><br><br>
-
+            <input type="text" id="modelo" name="modelo" placeholder="Escreva o modelo do seu iPhone" required>
             <label for="quantidade_gb">Quantidade de GB:</label>
             <select id="quantidade_gb" name="quantidade_gb" required>
                 <option value="">Selecione</option>
@@ -63,10 +103,14 @@
                 <option value="256GB">256GB</option>
                 <option value="512GB">512GB</option>
                 <option value="1TB">1TB</option>
-            </select><br><br>
+            </select>
+            <label for="manutencao">Já foi feita alguma manutenção no aparelho?</label>
+            <textarea id="manutencao" name="manutencao" placeholder="Se sim, descreva a manutenção feita"></textarea>
+            <label for="avaria">O aparelho possui alguma avaria?</label>
+            <textarea id="avaria" name="avaria" placeholder="Descreva a avaria, se houver"></textarea>
+        </fieldset>
 
-            <label for="manutencao">Já foi feita alguma manutenção no aparelho?</label><br>
-            <input type="radio" id="manutencao_sim" name="manutencao" value="sim"> Sim
-            <input type="radio" id="manutencao_nao" name="manutencao" value="nao"> Não<br><br>
-
-            <label for="avaria">O aparelho possui alguma avaria?</la
+        <input type="submit" value="Finalizar Compra">
+    </form>
+</body>
+</html>
