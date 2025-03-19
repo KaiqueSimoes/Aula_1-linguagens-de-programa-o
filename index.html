@@ -3,107 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Cadastro</title>
+    <title>Formulário de Compra de iPhone</title>
 </head>
 <body>
-    <h1>Formulário de Cadastro</h1>
+    <h1>Formulário de Compra de iPhone</h1>
     <form action="http://www.w3schools.com/action_page.php" method="POST">
-        <!-- Data -->
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required><br><br>
-
-        <!-- Dados de Acesso -->
-        <fieldset>
-            <legend>Dados de Acesso</legend>
-            <label for="usuario">Usuário:</label>
-            <input type="text" id="usuario" name="usuario" required><br><br>
-
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required><br><br>
-        </fieldset>
-
         <!-- Dados Pessoais -->
         <fieldset>
             <legend>Dados Pessoais</legend>
 
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome Completo:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required><br><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br><br>
 
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero" required><br><br>
-
-            <label for="complemento">Complemento:</label>
-            <input type="text" id="complemento" name="complemento"><br><br>
-
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" list="cidades" required>
-            <datalist id="cidades">
-                <option value="São Paulo">
-                <option value="Rio de Janeiro">
-                <option value="Belo Horizonte">
-                <option value="Curitiba">
-            </datalist><br><br>
-
-            <label for="estado">Estado:</label>
-            <select id="estado" name="estado" required>
-                <option value="">Selecione</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PR">Paraná</option>
-            </select><br><br>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required><br><br>
 
             <label for="cep">CEP:</label>
             <input type="text" id="cep" name="cep" required><br><br>
         </fieldset>
 
-        <!-- Gênero -->
+        <!-- Endereço, Cidade e Estado -->
         <fieldset>
-            <legend>Gênero</legend>
-            <label for="masculino">Masculino</label>
-            <input type="radio" id="masculino" name="genero" value="masculino"><br><br>
+            <legend>Endereço</legend>
 
-            <label for="feminino">Feminino</label>
-            <input type="radio" id="feminino" name="genero" value="feminino"><br><br>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required><br><br>
 
-            <label for="nao_falar">Prefiro não falar</label>
-            <input type="radio" id="nao_falar" name="genero" value="nao_falar"><br><br>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required><br><br>
         </fieldset>
 
-        <!-- Curso -->
+        <!-- Informações do Produto -->
         <fieldset>
-            <legend>Curso</legend>
-            <label for="ads">ADS</label>
-            <input type="checkbox" id="ads" name="curso" value="ads"><br><br>
+            <legend>Informações do Produto</legend>
 
-            <label for="jogos">Jogos</label>
-            <input type="checkbox" id="jogos" name="curso" value="jogos"><br><br>
+            <label for="modelo">Modelo de iPhone:</label>
+            <select id="modelo" name="modelo" required>
+                <option value="">Selecione</option>
+                <option value="iphone_15">iPhone 15</option>
+                <option value="iphone_15_pro">iPhone 15 Pro</option>
+                <option value="iphone_15_pro_max">iPhone 15 Pro Max</option>
+                <option value="iphone_14">iPhone 14</option>
+                <option value="iphone_14_pro">iPhone 14 Pro</option>
+            </select><br><br>
 
-            <label for="gestao_ti">Gestão de TI</label>
-            <input type="checkbox" id="gestao_ti" name="curso" value="gestao_ti"><br><br>
+            <label for="saude_bateria">Saúde da Bateria (%):</label>
+            <input type="number" id="saude_bateria" name="saude_bateria" min="0" max="100" required><br><br>
 
-            <label for="banco_dados">Banco de Dados</label>
-            <input type="checkbox" id="banco_dados" name="curso" value="banco_dados"><br><br>
-        </fieldset>
+            <label for="quantidade_gb">Quantidade de GB:</label>
+            <select id="quantidade_gb" name="quantidade_gb" required>
+                <option value="">Selecione</option>
+                <option value="128GB">128GB</option>
+                <option value="256GB">256GB</option>
+                <option value="512GB">512GB</option>
+                <option value="1TB">1TB</option>
+            </select><br><br>
 
-        <!-- Modelo -->
-        <fieldset>
-            <legend>Modelo</legend>
-            <label for="presencial">Presencial</label>
-            <input type="radio" id="presencial" name="modelo" value="presencial"><br><br>
+            <label for="manutencao">Já foi feita alguma manutenção no aparelho?</label><br>
+            <input type="radio" id="manutencao_sim" name="manutencao" value="sim"> Sim
+            <input type="radio" id="manutencao_nao" name="manutencao" value="nao"> Não<br><br>
 
-            <label for="ead">EAD</label>
-            <input type="radio" id="ead" name="modelo" value="ead"><br><br>
-
-            <label for="semi_presencial">Semi Presencial</label>
-            <input type="radio" id="semi_presencial" name="modelo" value="semi_presencial"><br><br>
-        </fieldset>
-
-        <br><br>
-        <input type="submit" value="Enviar">
-    </form>
-</body>
-</html>
+            <label for="avaria">O aparelho possui alguma avaria?</la
